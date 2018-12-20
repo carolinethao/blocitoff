@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 import TaskList from './components/TaskList';
 import * as firebase from 'firebase';
@@ -18,13 +18,17 @@ firebase.initializeApp(config);
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header>  
-        <h1>Blocitoff</h1>
-        </header>
-        <main>
-        <TaskList firebase = {firebase} />
-        </main>
+      <div className="container">
+        <div className="App">
+          <header>
+            <h1>Blocitoff</h1>
+          </header>
+          <main>
+            <div className="container">
+              <Route exact path="/" component={() => <TaskList firebase={firebase} />} />
+            </div>
+          </main>
+        </div>
       </div>
     );
   }
