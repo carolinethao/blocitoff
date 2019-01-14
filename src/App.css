@@ -63,7 +63,7 @@ input[type=checkbox]:before {
   visibility: visible;
   display:inline-block;
   padding: 0 0 0 0px;
-  top: 12px;
+  top: 10px;
   left: 9px;
   position: absolute;
   width: 18px;
@@ -88,6 +88,6 @@ input[type=checkbox]:checked:before {
 }
 
 button {
-background: none;
-border: none;
+  background: none;
+  border: none;
 }

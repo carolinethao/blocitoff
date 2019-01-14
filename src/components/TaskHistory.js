@@ -40,27 +40,35 @@ class TaskHistory extends Component {
         <h5>Completed</h5>
         <ul className="list-group">
         { this.state.tasks.filter(task => (task.isCompleted === true)).map((task, index) =>
-            <li className="list-group-item" key={ index }>
-              <table className="table table-borderless">
-                <tbody>
-                  <tr>
-                    <td className="checkbox"><input type="checkbox" onChange={() => this.switchComplete(task)} checked={task.isCompleted}/>
-                      { task.name }
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </li>
-          )
-        }
+          <li className="list-group-item" key={ index }>
+            <table className="table table-borderless">
+              <tbody>
+                <tr>
+                  <td className="checkbox"><input type="checkbox" onChange={() => this.switchComplete(task)} checked={task.isCompleted}/>
+                    { task.name }
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        )}
         </ul>
         <br/>
         <h5>Expired</h5>
         <ul className="list-group">
         { this.state.tasks.filter(task => (task.createdAt < (Date.now() - 604800000)) && (task.isCompleted === false)).map((task, index) =>
-            <li className="list-group-item" key={ index }><input type="checkbox" onChange={() => this.switchComplete(task)} checked={task.isCompleted}/> { task.name }</li>
-          )
-        }
+          <li className="list-group-item" key={ index }>
+            <table className="table table-borderless">
+              <tbody>
+                <tr>
+                  <td className="checkbox"><input type="checkbox" onChange={() => this.switchComplete(task)} checked={task.isCompleted}/>
+                    { task.name }
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        )}
         </ul>
         <br/>
       </section>
