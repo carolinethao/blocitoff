@@ -30,3 +30,64 @@
     transform: rotate(360deg);
   }
 }
+
+.tasks {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+input[type=checkbox] {
+  visibility: hidden
+}
+
+.table td {
+  padding: 0;
+  vertical-align: middle;
+}
+
+li.list-group-item {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.table {
+  margin: 4px 0 4px 0 !important;
+}
+
+
+input[type=checkbox]:before {
+  content:'';
+  visibility: visible;
+  display:inline-block;
+  padding: 0 0 0 0px;
+  top: 12px;
+  left: 9px;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #5a5a5a;
+  border-radius: 1px;
+  transition: .2s;
+  box-sizing: border-box;
+}
+input[type=checkbox]:checked:before {
+  top: 7px;
+  left: 9px;
+  width: 8px;
+  height: 18px;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid #28a745;
+  border-bottom: 2px solid #28a745;
+  transform: rotate(40deg);
+  backface-visibility: hidden;
+  transform-origin: 100% 100%;
+}
+
+button {
+background: none;
+border: none;
+}
